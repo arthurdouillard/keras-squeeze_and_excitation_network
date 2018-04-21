@@ -16,7 +16,7 @@ def se_block(tensor, ratio):
     x = Dense(nb_channel // ratio, activation='relu')(x)
     x = Dense(nb_channel, activation='sigmoid')(x)
 
-    x = Multiply()(tensor, x)
+    x = Multiply()([tensor, x])
     return x
 ```
 
