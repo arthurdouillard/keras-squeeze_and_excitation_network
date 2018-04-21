@@ -19,3 +19,9 @@ def se_block(tensor, ratio):
     x = Multiply()(tensor, x)
     return x
 ```
+
+It is very easy to add SE blocks to existing architectures.
+
+- For linear architecture, simply add it after the Conv2D. This repository contains an example of `AlexNet` with SE blocks.
+- For inception architecture, add the SE blocks after each inception module.
+- For residual architecture, add the SE blocks in the main stream, just before adding the residual.
